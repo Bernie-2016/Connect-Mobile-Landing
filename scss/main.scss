@@ -1,0 +1,295 @@
+$mobile-width: 480px;
+$tablet-width: 768px;
+$medium-width: 992px;
+$desktop-width: 1200px;
+
+$blue: #147fd7;
+$white: #fefefe;
+$light-grey: darken($white, 20);
+$dark-grey: darken($light-grey, 20);
+$darker: darken($dark-grey, 20);
+$red: #f55b5b;
+
+@mixin mobile {
+	@media (min-width: #{$mobile-width}) {
+		@content;
+	}
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin medium {
+	@media (min-width: #{$medium-width}) {
+		@content;
+	}
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+// Bootstrap overrides
+
+@media (min-width: 768px) {
+  .container {
+    width: 600px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 850px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1050px;
+  }
+}
+
+.navbar-inverse {
+	background: transparent;
+	border-bottom: none;
+	text-transform: uppercase;
+
+	@include desktop {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+
+@include desktop {
+	.navbar-nav>li>a {
+		padding-top: 15px;
+	}
+	.navbar-btn.btn-sm {
+		margin-top: 15px;
+	}
+}
+
+body {
+	padding-bottom: 105px;
+	color: $light-grey;
+}
+
+.colored-hr {
+	width: 165px;
+	margin: auto;
+	height: 1px;
+	background: $blue;
+}
+
+header {
+	background: #556 url("http://lorempixel.com/1600/1600/business") top center no-repeat fixed;
+	background-size: cover;
+	background-blend-mode: multiply;
+	min-height: 100vh;
+	margin-top: -115px;
+	padding-bottom: 20px;
+
+	@include tablet {
+		min-height: 90vh;
+	}
+
+	.container {
+		padding-top: 7vh;
+
+		img.screenshot {
+			height: 50vh;
+			margin-top: -10 vh;
+
+			@include tablet {
+				height: 70vh;
+			}
+		}
+
+		#intro {
+
+			margin-top: 20px;
+			text-align: center;
+
+			@include medium {
+				margin-top: 0;
+				padding-left: 40px;
+			}
+			
+		}
+
+		.masthead {
+			font: {
+				family: "Merriweather";
+				weight: 400;
+				size: 25px;
+			}
+			
+			line-height: 38px;
+			color: $white;
+			
+			border: {
+				top: 3px solid $blue;
+				bottom: 3px solid $blue;
+			}
+			
+			padding: {
+				top: 2vh;
+				bottom: 3vh;
+			}
+
+			@include mobile {
+				font-size: 28px;
+			}
+
+			@include desktop {
+				font-size: 35px;
+				line-height: 45px;
+			}
+		}
+
+		.things {
+
+			margin: 0 0 20px;
+			padding: 0;
+
+			li {
+				list-style-type: none;
+				display: inline;
+			}
+
+			li:nth-child(1n+2):before {
+				content: "\2022";
+				color: $red;
+				display: inline;
+				width: 20px;
+				text-align: center;
+
+				@include desktop {
+					content: "";
+					width: 0;
+				}
+			}
+
+			@include desktop {
+				li:nth-child(2n):before {
+					content: "\2022";
+					color: $red;
+					display: inline;
+				}
+			}
+		}
+
+		.appstore {
+			img {
+				padding: 5px;
+			}
+			margin-bottom: 10px;
+		}
+	}
+}
+
+section {
+
+	overflow: hidden;
+	padding-top: 10vh;
+	padding-bottom: 15vh;
+
+	.section-head {
+		text-align: center;
+		margin-bottom: 30px;
+
+		h2 {
+			font-weight: 700;
+			color: $blue;
+			font-size: 50px;
+			font-family: "Merriweather";
+		}
+
+		h3 {
+			margin-top: 15px;
+			margin-bottom: 15px;
+			font-size: 18px;
+			font-weight: 300;
+		}
+	}
+
+	&#features {
+		color: $darker;
+		font-weight: 300;
+		background: darken($white, 10);
+
+		img.mockup {
+			height: 450px;
+		}
+
+		.features-left {
+			text-align: center;
+
+			@include medium {
+				text-align: right;
+			}
+		}
+
+		.features-right {
+			text-align: center;
+
+			@include medium {
+				text-align: left;
+			}
+
+		}
+
+		.feature {
+			margin-bottom: 20px;
+			padding: 10px 20px;
+
+			.feature-title {
+				font-weight: 400;
+				font-size: 1.3em;
+			}
+
+			.feature-info {
+				font-size: 1.2em;
+			}
+		}
+
+	}
+
+	&#about {
+
+	}
+
+	&#contact {
+
+	}
+}
+
+#stickyFoot {
+
+	padding-left: 10px;
+	padding-right: 10px;
+	color: $red;
+
+	h1 {
+		font-family: "Merriweather";
+		color: $blue;
+		font-size: 20px;
+
+		@include mobile {
+			font-size: 25px;
+		}
+
+		@include tablet {
+			font-size: 28px;
+		}
+		
+		@include desktop {
+			font-size: 35px;
+		}
+	}
+
+	border-top: 1px solid $dark-grey;
+}

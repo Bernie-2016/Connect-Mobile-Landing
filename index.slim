@@ -1,0 +1,126 @@
+doctype html
+/[if lt IE 7] 
+	<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="">
+/[if IE 7] 
+	<html class="no-js lt-ie9 lt-ie8" lang="">
+/[if IE 8] 
+	<html class="no-js lt-ie9" lang="">
+/[if gt IE 8] 
+	<!--> <html class="no-js" lang=""> <!--
+head
+	meta charset="utf-8"
+	meta http-equiv="X-UA-Compatible" content="IE=edge"
+	meta name="viewport" content="width=device-width, initial-scale=1"
+
+	title Movement
+
+	link rel="apple-touch-icon" href="apple-touch-icon.png"
+	link href='https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Merriweather:700,700italic' rel='stylesheet' type='text/css'
+	link rel="stylesheet" href="css/bootstrap.min.css"
+	link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css"
+	link rel="stylesheet" href="css/main.css"
+
+	script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"
+	script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" type="text/javascript"
+
+body
+
+	nav.navbar.navbar-inverse.navbar-static-top role="navigation"
+		.navbar-header
+		#navbar.navbar-collapse.collapse
+			a.btn.navbar-btn.btn-sm.btn-default Facebook
+			a.btn.navbar-btn.btn-sm.btn-info<> Twitter
+			ul.nav.navbar-nav.navbar-right
+				li: a href="#" Blog
+				li: a href="#" Support
+
+	.container-fluid
+
+		header#hero.row.text-center data-type="background" data-speed="10"
+			.container
+				.col-md-4
+					img.screenshot src="img/phonemock.png" alt="Screenshot!"
+				.col-md-8#intro
+					img src="http://placehold.it/60x60?text=logo" alt="logo"
+					h1.masthead Usher in the future through <br>a massive grassroots <br>movement to elect <br>Bernie Sanders in 2016
+					ul.things
+						li Read the latest news
+						li Attend rallies and events near you and across the country
+						li Contribute as a volunteer
+						li Learn where Bernie stands on the issues
+					.appstore
+						img src="http://placehold.it/200x50?text=Download on the App Store" alt="Download App"
+					img src="http://placehold.it/200x150?text=Volunteers, not billionaires!" alt="Made with <3 by Volunteers"
+
+		section#features.row
+			.container
+				.section-head.wow.fadeIn
+					h2 Features
+					.colored-hr
+					h3 These are some amazing features that the app does!
+				.col-md-4.features-left
+					.feature.wow.fadeInLeft data-wow-delay=".3s"
+						p.feature-title This is a feature
+						p.feature-info Lorem Feature Here Dolor Emet Stuff and Schleppin' the Progressive Agenda
+					.feature.wow.fadeInLeft data-wow-delay=".6s"
+						p.feature-title This is a feature
+						p.feature-info Lorem Feature Here Dolor Emet Stuff and Schleppin' the Progressive Agenda
+					.feature.wow.fadeInLeft data-wow-delay=".9s"
+						p.feature-title This is a feature
+						p.feature-info Lorem Feature Here Dolor Emet Stuff and Schleppin' the Progressive Agenda
+				.col-md-4.text-center
+					img.mockup.wow.fadeInUp src="img/phonemock.png" alt="Mockup 2"
+				.col-md-4.features-right
+					.feature.wow.fadeInRight data-wow-delay=".3s"
+						p.feature-title This is a feature
+						p.feature-info Lorem Feature Here Dolor Emet Stuff and Schleppin' the Progressive Agenda
+					.feature.wow.fadeInRight data-wow-delay=".6s"
+						p.feature-title This is a feature
+						p.feature-info Lorem Feature Here Dolor Emet Stuff and Schleppin' the Progressive Agenda
+					.feature.wow.fadeInRight data-wow-delay=".9s"
+						p.feature-title This is a feature
+						p.feature-info Lorem Feature Here Dolor Emet Stuff and Schleppin' the Progressive Agenda
+
+		section#about.row
+
+		section#contact.row
+
+		footer
+			.container
+				.col-md-4
+				.col-md-4
+				.col-md-4
+
+	nav.navbar.navbar-default.navbar-fixed-bottom#stickyFoot
+		.container
+			.navbar-header.hidden-xs.hidden-sm
+				img.navbar-brand src="http://placehold.it/60x60?text=logo"
+			.text-center
+				h1 Help Elect Bernie Sanders in 2016
+				p Lorem Ipsum Dolor Emet
+	
+	script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"
+	script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript"
+	script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" type="text/javascript"
+
+	javascript:
+		$(function() {
+			new WOW().init();
+
+			$window = $(window);
+	 
+			$('[data-type="background"]').each(function(){
+			 var $scroll = $(this);
+			                 
+			  $(window).scroll(function() {                     
+			    var yPos = -($window.scrollTop() / $scroll.data('speed')); 
+			    
+			    var coords = 'center '+ yPos + 'px';
+			    $scroll.css({ backgroundPosition: coords });    
+			  });
+			});
+		});
+
+		// Create Elements for IE
+		document.createElement("article");
+		document.createElement("section");
