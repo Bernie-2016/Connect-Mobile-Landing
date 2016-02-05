@@ -17,7 +17,7 @@ gem install scss
 ```
 Install slim (if not present)
 
-``
+```
 gem install slim
 ```
 
