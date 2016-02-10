@@ -170,19 +170,6 @@ header {
 				display: inline;
 				width: 20px;
 				text-align: center;
-
-				@include desktop {
-					content: "";
-					width: 0;
-				}
-			}
-
-			@include desktop {
-				li:nth-child(2n):before {
-					content: "\2022";
-					color: $red;
-					display: inline;
-				}
 			}
 		}
 
